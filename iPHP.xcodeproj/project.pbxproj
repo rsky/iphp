@@ -49,12 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7B243BA6174BF05900B1D08E /* libHalf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHalf.a; path = ../../../../../../opt/ios/lib/libHalf.a; sourceTree = "<group>"; };
-		7B243BA7174BF05900B1D08E /* libIex.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIex.a; path = ../../../../../../opt/ios/lib/libIex.a; sourceTree = "<group>"; };
-		7B243BA8174BF05900B1D08E /* libIexMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIexMath.a; path = ../../../../../../opt/ios/lib/libIexMath.a; sourceTree = "<group>"; };
-		7B243BA9174BF05900B1D08E /* libIlmImf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIlmImf.a; path = ../../../../../../opt/ios/lib/libIlmImf.a; sourceTree = "<group>"; };
-		7B243BAA174BF05900B1D08E /* libIlmThread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIlmThread.a; path = ../../../../../../opt/ios/lib/libIlmThread.a; sourceTree = "<group>"; };
-		7B243BAB174BF05900B1D08E /* libImath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libImath.a; path = ../../../../../../opt/ios/lib/libImath.a; sourceTree = "<group>"; };
 		7B278F021749624900DF454B /* libMagickCore-6.Q16.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMagickCore-6.Q16.a"; sourceTree = "<group>"; };
 		7B278F031749624900DF454B /* libMagickWand-6.Q16.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMagickWand-6.Q16.a"; sourceTree = "<group>"; };
 		7B278F041749624900DF454B /* libphp5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libphp5.a; sourceTree = "<group>"; };
@@ -704,12 +698,6 @@
 		DB7CE89F173B5DEC002D16B7 = {
 			isa = PBXGroup;
 			children = (
-				7B243BA6174BF05900B1D08E /* libHalf.a */,
-				7B243BA7174BF05900B1D08E /* libIex.a */,
-				7B243BA8174BF05900B1D08E /* libIexMath.a */,
-				7B243BA9174BF05900B1D08E /* libIlmImf.a */,
-				7B243BAA174BF05900B1D08E /* libIlmThread.a */,
-				7B243BAB174BF05900B1D08E /* libImath.a */,
 				DBBFFA1B173D0AF9003AF266 /* Resources */,
 				DB7CE8B1173B5DEC002D16B7 /* iPHP */,
 				DB7CE8AA173B5DEC002D16B7 /* Frameworks */,

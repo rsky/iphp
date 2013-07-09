@@ -98,6 +98,14 @@ const char *iphp_error_type_to_string(int type)
 
 - (id)init
 {
+    return [self initWithPhpIni:[[NSBundle mainBundle]
+                                 pathForResource:@"php"
+                                 ofType:@"ini"
+                                 inDirectory:@"etc"]];
+}
+
+- (id)initWithPhpIni:(NSString *)phpIni
+{
     self = [super init];
     if (self) {
         _mutableBuffer = [NSMutableData new];
@@ -105,7 +113,7 @@ const char *iphp_error_type_to_string(int type)
                             [[NSBundle mainBundle] bundleIdentifier],
                             [[self class] description]];
         _queue = dispatch_queue_create([_queueIdentifier UTF8String], NULL);
-        _iniPath = [[NSBundle mainBundle] pathForResource:@"php" ofType:@"ini"];
+        _iniPath = phpIni;
         [self startup];
         [self activate];
     }
@@ -158,6 +166,7 @@ const char *iphp_error_type_to_string(int type)
 - (void)enqueueCode:(NSString *)code completion:(void (^)(NSData *))completion
 {
     dispatch_async(_queue, ^{
+        TSRMLS_FETCH();
         int shouldRestart = NO;
 
         PG(during_request_startup) = 0;
@@ -178,6 +187,54 @@ const char *iphp_error_type_to_string(int type)
             completion([self getBuffer]);
         }
 
+        [self clearBuffer];
+        if (shouldRestart) {
+            [self restart];
+        }
+    });
+}
+
+- (void)enqueueFilePath:(NSString *)filePath completion:(void (^)(NSData *))completion
+{
+    dispatch_async(_queue, ^{
+        TSRMLS_FETCH();
+        int shouldRestart = NO;
+        zend_file_handle file_handle;
+
+        file_handle.type = ZEND_HANDLE_FILENAME;
+        file_handle.filename = [filePath fileSystemRepresentation];
+        file_handle.handle.fp = NULL;
+        file_handle.opened_path = NULL;
+        file_handle.free_filename = 0;
+
+        PG(during_request_startup) = 0;
+
+        zend_first_try {
+            if (zend_stream_open(file_handle.filename, &file_handle TSRMLS_CC) == FAILURE) {
+                if (errno == EACCES) {
+                    [_mutableBuffer appendBytes:"Access denied.\n"
+                                         length:strlen("Access denied.\n")];
+                } else {
+                    [_mutableBuffer appendBytes:"No input file specified.\n"
+                                         length:strlen("No input file specified.\n")];
+                }
+            } else {
+                php_execute_script(&file_handle TSRMLS_CC);
+            }
+        } zend_catch {
+            NSLog(@"PHP %s:  %s in %s on line %d",
+                  iphp_error_type_to_string(PG(last_error_type)),
+                  PG(last_error_message),
+                  PG(last_error_file),
+                  PG(last_error_lineno));
+            NSLog(@"exit_status = %d", EG(exit_status));
+            shouldRestart = YES;
+        } zend_end_try();
+        
+        if (completion) {
+            completion([self getBuffer]);
+        }
+        
         [self clearBuffer];
         if (shouldRestart) {
             [self restart];

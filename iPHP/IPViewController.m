@@ -8,6 +8,7 @@
 
 #import "IPViewController.h"
 #import "IPEngine.h"
+#import "IPServer.h"
 #import "IPBenchmark.h"
 
 @interface IPViewController ()
@@ -76,14 +77,10 @@
 - (void)phpinfo:(id)sender
 {
     [self hideKeyboard];
-    _myCode.text = @"phpinfo();";
-    [_phpEngine enqueueCode:@"phpinfo();"
-                 completion:^(NSData *output){
-                     NSData *data = [output copy];
-                     dispatch_async(dispatch_get_main_queue(), ^{
-                         [self setUTF8HTML:data];
-                     });
-                 }];
+    NSURL *url = [NSURL URLWithString:
+                  [NSString stringWithFormat:@"http://localhost:%hu/phpinfo.php",
+                   [IPServer sharedServer].port]];
+    [_myWebView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
 - (void)benchmark:(id)sender

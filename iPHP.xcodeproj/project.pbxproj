@@ -51,7 +51,10 @@
 		7B961833173C606500DEFF67 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B96182E173C606500DEFF67 /* libjpeg.a */; };
 		7B961837173C606500DEFF67 /* libtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B961832173C606500DEFF67 /* libtiff.a */; };
 		7B9866FE174412A100031F21 /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9866FD174412A100031F21 /* libwebp.a */; };
-		7B9D7D2217403264003CA705 /* php.ini in Resources */ = {isa = PBXBuildFile; fileRef = 7B9D7D2117403264003CA705 /* php.ini */; };
+		7BA131D0178C53C200645B7D /* IPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA131CF178C53C200645B7D /* IPServer.m */; };
+		7BA131D3178C579700645B7D /* etc in Resources */ = {isa = PBXBuildFile; fileRef = 7BA131D1178C579700645B7D /* etc */; };
+		7BA131D6178C57AB00645B7D /* Web in Resources */ = {isa = PBXBuildFile; fileRef = 7BA131D5178C57AB00645B7D /* Web */; };
+		7BA131DB178C5DB200645B7D /* IPHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA131DA178C5DB200645B7D /* IPHTTPConnection.m */; };
 		7BD3FEF3173C035A00DD57B9 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3FEF0173C035A00DD57B9 /* libcrypto.a */; };
 		7BD3FEF4173C035A00DD57B9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3FEF1173C035A00DD57B9 /* libcurl.a */; };
 		7BD3FEF5173C035A00DD57B9 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3FEF2173C035A00DD57B9 /* libssl.a */; };
@@ -296,7 +299,12 @@
 		7B961832173C606500DEFF67 /* libtiff.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtiff.a; sourceTree = "<group>"; };
 		7B9866FD174412A100031F21 /* libwebp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebp.a; sourceTree = "<group>"; };
 		7B9D7D201740312B003CA705 /* php_msgpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = php_msgpack.h; sourceTree = "<group>"; };
-		7B9D7D2117403264003CA705 /* php.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = php.ini; sourceTree = "<group>"; };
+		7BA131CE178C53C200645B7D /* IPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPServer.h; path = ../../iPHP/iPHP/IPServer.h; sourceTree = "<group>"; };
+		7BA131CF178C53C200645B7D /* IPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPServer.m; path = ../../iPHP/iPHP/IPServer.m; sourceTree = "<group>"; };
+		7BA131D1178C579700645B7D /* etc */ = {isa = PBXFileReference; lastKnownFileType = folder; name = etc; path = ../../../iPHP/etc; sourceTree = "<group>"; };
+		7BA131D5178C57AB00645B7D /* Web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Web; path = ../../../iPHP/Web; sourceTree = "<group>"; };
+		7BA131D9178C5DB200645B7D /* IPHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPHTTPConnection.h; path = ../../iPHP/iPHP/IPHTTPConnection.h; sourceTree = "<group>"; };
+		7BA131DA178C5DB200645B7D /* IPHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IPHTTPConnection.m; path = ../../iPHP/iPHP/IPHTTPConnection.m; sourceTree = "<group>"; };
 		7BD3FEF0173C035A00DD57B9 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		7BD3FEF1173C035A00DD57B9 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcurl.a; sourceTree = "<group>"; };
 		7BD3FEF2173C035A00DD57B9 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
@@ -980,6 +988,10 @@
 				DB7CE8C3173B5DEC002D16B7 /* MainStoryboard.storyboard */,
 				DB7CE8C6173B5DEC002D16B7 /* IPViewController.h */,
 				DB7CE8C7173B5DEC002D16B7 /* IPViewController.m */,
+				7BA131CE178C53C200645B7D /* IPServer.h */,
+				7BA131CF178C53C200645B7D /* IPServer.m */,
+				7BA131D9178C5DB200645B7D /* IPHTTPConnection.h */,
+				7BA131DA178C5DB200645B7D /* IPHTTPConnection.m */,
 				DB86A551173B70E6007FA96C /* IPEngine.h */,
 				DB86A552173B70E6007FA96C /* IPEngine.m */,
 				DBBFFA1C173D0B91003AF266 /* IPBenchmark.h */,
@@ -1040,6 +1052,8 @@
 		DBBFFA1B173D0AF9003AF266 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7BA131D5178C57AB00645B7D /* Web */,
+				7BA131D1178C579700645B7D /* etc */,
 				DBBFFA11173D0A0E003AF266 /* Default.png */,
 				DBBFFA13173D0A10003AF266 /* Default@2x.png */,
 				DBBFFA15173D0A14003AF266 /* Default-568h@2x.png */,
@@ -1047,7 +1061,6 @@
 				DBBFFA19173D0AF0003AF266 /* Icon@2x.png */,
 				DBCCFA801742453400FDABDA /* source.jpeg */,
 				DBBFFA20173D136D003AF266 /* source.tiff */,
-				7B9D7D2117403264003CA705 /* php.ini */,
 			);
 			name = Resources;
 			path = iPHP/Resources;
@@ -1554,8 +1567,9 @@
 				DBBFFA18173D0AEE003AF266 /* Icon.png in Resources */,
 				DBBFFA1A173D0AF0003AF266 /* Icon@2x.png in Resources */,
 				DBBFFA21173D136D003AF266 /* source.tiff in Resources */,
-				7B9D7D2217403264003CA705 /* php.ini in Resources */,
 				DBCCFA811742453400FDABDA /* source.jpeg in Resources */,
+				7BA131D3178C579700645B7D /* etc in Resources */,
+				7BA131D6178C57AB00645B7D /* Web in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1604,6 +1618,8 @@
 				7B5895B4178C4F920080C7C2 /* DDTTYLogger.m in Sources */,
 				7B5895B5178C4F920080C7C2 /* ContextFilterLogFormatter.m in Sources */,
 				7B5895B6178C4F920080C7C2 /* DispatchQueueLogFormatter.m in Sources */,
+				7BA131D0178C53C200645B7D /* IPServer.m in Sources */,
+				7BA131DB178C5DB200645B7D /* IPHTTPConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,11 +17,13 @@
 @property (nonatomic, strong) void (^onFlushBuffer)(IPEngine __weak *);
 
 + (IPEngine *)sharedEngine;
+- (id)initWithPhpIni:(NSString *)phpIni;
 - (void)restart;
 - (void)gc;
 - (void)clearBuffer;
 - (void)flushBuffer;
 - (void)enqueueCode:(NSString *)code completion:(void (^)(NSData *))completion;
+- (void)enqueueFilePath:(NSString *)filePath completion:(void (^)(NSData *))completion;
 
 @end
 

@@ -560,27 +560,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B5893A6178C4C370080C7C2 /* CFNetwork.framework in Frameworks */,
+				DB7CE8B0173B5DEC002D16B7 /* CoreGraphics.framework in Frameworks */,
+				DB7CE8AE173B5DEC002D16B7 /* Foundation.framework in Frameworks */,
+				7B5F77F8173F7CCC003120E9 /* QuartzCore.framework in Frameworks */,
 				7B5893A4178C4C180080C7C2 /* Security.framework in Frameworks */,
+				DB7CE8AC173B5DEC002D16B7 /* UIKit.framework in Frameworks */,
 				7B8A6440173BE2060029FC27 /* libbz2.dylib in Frameworks */,
 				DB6F60F4173B659E00579300 /* libresolv.dylib in Frameworks */,
 				DB7CE8CF173B5E18002D16B7 /* libxml2.dylib in Frameworks */,
 				DB7CE8D1173B5E40002D16B7 /* libz.dylib in Frameworks */,
-				DB7CE8AC173B5DEC002D16B7 /* UIKit.framework in Frameworks */,
-				DB7CE8AE173B5DEC002D16B7 /* Foundation.framework in Frameworks */,
-				DB7CE8B0173B5DEC002D16B7 /* CoreGraphics.framework in Frameworks */,
-				7B5F77F8173F7CCC003120E9 /* QuartzCore.framework in Frameworks */,
-				7BD3FEF3173C035A00DD57B9 /* libcrypto.a in Frameworks */,
-				7BD3FEF4173C035A00DD57B9 /* libcurl.a in Frameworks */,
-				7BD3FEF5173C035A00DD57B9 /* libssl.a in Frameworks */,
-				7B961833173C606500DEFF67 /* libjpeg.a in Frameworks */,
-				7B961837173C606500DEFF67 /* libtiff.a in Frameworks */,
-				DBCCFA7F1742451E00FDABDA /* libfreetype.a in Frameworks */,
-				7B9866FE174412A100031F21 /* libwebp.a in Frameworks */,
-				7B94D4E817480ACF0057D23F /* liblcms2.a in Frameworks */,
-				7B94D4EB17480ACF0057D23F /* libpng16.a in Frameworks */,
 				7B278F051749624900DF454B /* libMagickCore-6.Q16.a in Frameworks */,
 				7B278F061749624900DF454B /* libMagickWand-6.Q16.a in Frameworks */,
+				7BD3FEF3173C035A00DD57B9 /* libcrypto.a in Frameworks */,
+				7BD3FEF4173C035A00DD57B9 /* libcurl.a in Frameworks */,
+				DBCCFA7F1742451E00FDABDA /* libfreetype.a in Frameworks */,
+				7B961833173C606500DEFF67 /* libjpeg.a in Frameworks */,
+				7B94D4E817480ACF0057D23F /* liblcms2.a in Frameworks */,
 				7B278F071749624A00DF454B /* libphp5.a in Frameworks */,
+				7B94D4EB17480ACF0057D23F /* libpng16.a in Frameworks */,
+				7BD3FEF5173C035A00DD57B9 /* libssl.a in Frameworks */,
+				7B961837173C606500DEFF67 /* libtiff.a in Frameworks */,
+				7B9866FE174412A100031F21 /* libwebp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,12 +941,12 @@
 		DB7CE89F173B5DEC002D16B7 = {
 			isa = PBXGroup;
 			children = (
-				DBBFFA1B173D0AF9003AF266 /* Resources */,
 				DB7CE8B1173B5DEC002D16B7 /* iPHP */,
-				DB7CE8AA173B5DEC002D16B7 /* Frameworks */,
-				DB7CE8D2173B5E4E002D16B7 /* Libraries */,
-				DB7CE8D5173B60A9002D16B7 /* Headers */,
+				DBBFFA1B173D0AF9003AF266 /* Resources */,
 				7B5893A7178C4C750080C7C2 /* CocoaHTTPServer */,
+				DB7CE8AA173B5DEC002D16B7 /* Frameworks */,
+				DB7CE8D5173B60A9002D16B7 /* Headers */,
+				DB7CE8D2173B5E4E002D16B7 /* Libraries */,
 				DB7CE8A9173B5DEC002D16B7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -962,12 +962,12 @@
 		DB7CE8AA173B5DEC002D16B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DB7CE8AB173B5DEC002D16B7 /* UIKit.framework */,
-				DB7CE8AD173B5DEC002D16B7 /* Foundation.framework */,
-				DB7CE8AF173B5DEC002D16B7 /* CoreGraphics.framework */,
-				7B5F77F7173F7CCC003120E9 /* QuartzCore.framework */,
 				7B5893A5178C4C370080C7C2 /* CFNetwork.framework */,
+				DB7CE8AF173B5DEC002D16B7 /* CoreGraphics.framework */,
+				DB7CE8AD173B5DEC002D16B7 /* Foundation.framework */,
+				7B5F77F7173F7CCC003120E9 /* QuartzCore.framework */,
 				7B5893A3178C4C180080C7C2 /* Security.framework */,
+				DB7CE8AB173B5DEC002D16B7 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
